@@ -82,8 +82,8 @@ namespace NewHIMS
             StringBuilder sb = new StringBuilder();
             sb.Append("Hi,<br/> Click on below given link to Reset Your Password<br/>");
             sb.Append("<a href=http://localhost:9209/Reset.aspx?username=" + GetUserEmail(txtemail.Text));
-            sb.Append("&email=" + txtemail.Text + ">Click here to change your password</a><br/>");          
-            MailMessage message = new System.Net.Mail.MailMessage("hemalibishnoi295@gmail.com", txtemail.Text.Trim(), "Reset Your Password", sb.ToString());
+            sb.Append("&email=" + txtemail.Text + ">Click here to change your password</a><br/>");
+            MailMessage message = new System.Net.Mail.MailMessage("bishnoihemali@gmail.com", txtemail.Text.Trim(), "Reset Your Password", sb.ToString());
 
             SmtpClient smtp = new SmtpClient();
 
@@ -91,7 +91,7 @@ namespace NewHIMS
 
             smtp.Port = 587;
 
-            smtp.Credentials = new System.Net.NetworkCredential("hemalibishnoi295@gmail.com", "passwordbadal");
+            smtp.Credentials = new System.Net.NetworkCredential("bishnoihemali@gmail.com", "hemali29");
 
             smtp.EnableSsl = true;
 
