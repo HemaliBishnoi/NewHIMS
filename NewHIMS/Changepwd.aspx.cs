@@ -28,22 +28,30 @@ namespace NewHIMS
         }
         protected void btn_update_Click(object sender, EventArgs e)
         {
-            if (txt_npassword.Text != "")
+            try
             {
-                
-                cmd = new SqlCommand("update Register set Password='"+txt_npassword.Text+"' where Uname='" + Session["uname"] + "'", con);
-                
-                con.Open();  
-                cmd.Parameters.AddWithValue("@password",txt_npassword.Text);                
-                cmd.ExecuteNonQuery();  
-                lbl_msg.Text="Password Updated";
-                con.Close();   
-            }  
-            else  
-            {  
-                lbl_msg.Text = "Please enter correct Current password";
-            }  
-            
+
+                if (txt_npassword.Text != "")
+                {
+
+                    cmd = new SqlCommand("update Register set Password='" + txt_npassword.Text + "' where Uname='" + Session["uname"] + "'", con);
+
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@password", txt_npassword.Text);
+                    cmd.ExecuteNonQuery();
+                    lbl_msg.Text = "Password Updated";
+                    con.Close();
+                }
+                else
+                {
+                    lbl_msg.Text = "Please enter correct Current password";
+                }
+            }
+            catch(Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

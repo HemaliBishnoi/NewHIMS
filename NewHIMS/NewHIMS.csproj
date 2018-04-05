@@ -60,7 +60,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
@@ -113,7 +113,6 @@
     <Content Include="Forgetpwd.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="temp.aspx" />
     <Content Include="UserProfile.aspx" />
     <Content Include="ViewProfile.aspx" />
     <Content Include="Web.config" />
@@ -184,13 +183,6 @@
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="temp.aspx.cs">
-      <DependentUpon>temp.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="temp.aspx.designer.cs">
-      <DependentUpon>temp.aspx</DependentUpon>
-    </Compile>
     <Compile Include="UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

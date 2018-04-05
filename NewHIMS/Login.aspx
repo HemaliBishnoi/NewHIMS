@@ -42,7 +42,9 @@
                 </td>
                
             </tr>
+            
         </table>
+        <asp:Label ID="Label4" runat="server"></asp:Label>
         Click
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Register.aspx">Here</asp:HyperLink>
         to register

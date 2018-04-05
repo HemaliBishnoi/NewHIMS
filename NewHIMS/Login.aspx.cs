@@ -24,16 +24,26 @@ namespace NewHIMS
             {
                 if (ip.AddressFamily.ToString() == "InterNetwork")
                 {
-                    IP = ip.ToString();
+                    IP = ip.ToString();                    
                 }
             }
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+            
         }
         protected void button1_Click(object sender, EventArgs e)
         {
+            SqlConnection con = Main.GetDBConnection();            
+            string q=@"select Status from Log where Uname='"+uname.Text+"'";
+            SqlCommand com = new SqlCommand(q,con);
+            if (q=="Active")
+            {
+                Response.Write("Useer is already LoggedIn");
+            }
+            else 
+            { 
             string login = "Login";
             string status = "Active";
             Main code = new Main();
@@ -46,8 +56,7 @@ namespace NewHIMS
                 code.Execute(@"insert into Log values('" + Convert.ToString(uname.Text) + "','" + DateTime.Now + "','" + login + "','" + IP + "','" + status + "','" + Role + "')");
             }
             try
-            {
-                SqlConnection con = Main.GetDBConnection();
+            {               
                 SqlCommand cmd = new SqlCommand("CheckUser", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter p1 = new SqlParameter("uname", uname.Text);
@@ -60,21 +69,19 @@ namespace NewHIMS
                 {
                     rd.Read();
                     Label3.Text = "Login successful.";
-                    Response.Redirect("UserProfile.aspx");
+                    Session["uname"] = uname.Text;
+                    Response.Redirect("UserProfile.aspx");                    
                 }
-
                 else
                 {
                     Label3.Text = "Invalid username or password.";
-
                 }
             }
             catch
             {
                 throw;
+            }            
             }
-            Session["uname"] = uname.Text;
-
         }
     }
 }

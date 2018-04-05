@@ -15,7 +15,6 @@ using System.Net.Mail;
 using System.Net;
 using System.Text;
 
-
 namespace NewHIMS
 {
     public partial class Forgetpwd : System.Web.UI.Page

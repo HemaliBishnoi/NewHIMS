@@ -11,11 +11,13 @@
     <div>
         
    <table>
+       
        <tr>
            <td>
                <asp:Image ID="img" runat="server" Width="100px" Height="100px" />
            </td>
        </tr>
+       
        <tr>
            <td>
                <asp:Button ID="button1" runat="server" Text="Logout" OnClick="button1_Click" />
